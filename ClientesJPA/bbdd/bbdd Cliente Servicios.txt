@@ -1,0 +1,18 @@
+
+CREATE DATABASE BClientes;
+Use BClientes;
+
+CREATE TABLE TCliente(
+
+idCliente INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nombre VARCHAR(60) NOT NULL,
+apellidos VARCHAR(120) NOT NULL,
+telefono VARCHAR(12) NOT NULL,
+correo VARCHAR(60));
+
+CREATE TABLE TServicio(
+idServicio INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+idCliente INT NOT NULL,
+descripcion VARCHAR(500));
+
+ALTER TABLE TServicio ADD FOREIGN KEY (idCliente) REFERENCES TCliente (idCliente);
